@@ -1,6 +1,6 @@
 %define version 0.6.11
 %define fversion 0-6-11
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Peter Baker's Junicode Fonts for medievalists
 Name:		fonts-ttf-junicode
@@ -14,8 +14,6 @@ Source0:	junicode-%fversion.zip
 # from http://heanet.dl.sourceforge.net/sourceforge/junicode/junicode-source-0.6.11.tar.gz:
 Source1:	junicode-changelog-0.6.11
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires(post):		chkfontpath
-Requires(postun):	chkfontpath
 Requires(post): fontconfig
 Requires(postun): fontconfig
 BuildArch:	noarch
@@ -45,16 +43,18 @@ cp *.ttf $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/junicode
 ttmkfdir $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/junicode > $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/junicode/fonts.dir
 ln -s fonts.dir $RPM_BUILD_ROOT%{_datadir}/fonts/ttf/junicode/fonts.scale
 
+mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
+ln -s ../../..%_datadir/fonts/ttf/junicode \
+    %{buildroot}%_sysconfdir/X11/fontpath.d/ttf-junicode:pri=50
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-[ -x %_sbindir/chkfontpath ] && %{_sbindir}/chkfontpath -q -a %{_datadir}/fonts/ttf/junicode
 [ -x %_bindir/fc-cache ] && %{_bindir}/fc-cache 
 
 %postun
 if [ "$1" = 0 ]; then
-  [ -x %{_sbindir}/chkfontpath ] && %{_sbindir}/chkfontpath -q -r %{_datadir}/fonts/ttf/junicode
   [ -x %{_bindir}/fc-cache ] && %{_bindir}/fc-cache 
 fi
 
@@ -62,3 +62,4 @@ fi
 %defattr(-,root,root,-)
 %doc ChangeLog
 %{_datadir}/fonts/ttf/junicode
+%{_sysconfdir}/X11/fontpath.d/ttf-junicode:pri=50
