@@ -13,6 +13,7 @@ URL:		http://junicode.sourceforge.net/
 Source0:	junicode-%fversion.zip
 # from http://heanet.dl.sourceforge.net/sourceforge/junicode/junicode-source-0.6.11.tar.gz:
 Source1:	junicode-changelog-0.6.11
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires(post): fontconfig
 Requires(postun): fontconfig
 BuildArch:	noarch
