@@ -1,6 +1,6 @@
 %define version 0.6.11
 %define fversion 0-6-11
-%define release %mkrel 5
+%define release %mkrel 6
 
 Summary:	Peter Baker's Junicode Fonts for medievalists
 Name:		fonts-ttf-junicode
@@ -14,8 +14,6 @@ Source0:	junicode-%fversion.zip
 # from http://heanet.dl.sourceforge.net/sourceforge/junicode/junicode-source-0.6.11.tar.gz:
 Source1:	junicode-changelog-0.6.11
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires(post): fontconfig
-Requires(postun): fontconfig
 BuildArch:	noarch
 BuildRequires:	freetype-tools
 
@@ -49,14 +47,6 @@ ln -s ../../..%_datadir/fonts/ttf/junicode \
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%post
-[ -x %_bindir/fc-cache ] && %{_bindir}/fc-cache 
-
-%postun
-if [ "$1" = 0 ]; then
-  [ -x %{_bindir}/fc-cache ] && %{_bindir}/fc-cache 
-fi
 
 %files
 %defattr(-,root,root,-)
