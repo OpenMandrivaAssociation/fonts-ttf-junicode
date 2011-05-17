@@ -15,6 +15,7 @@ Source0:	junicode-%fversion.zip
 Source1:	junicode-changelog-0.6.11
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
+BuildRequires: fontconfig
 BuildRequires:	freetype-tools
 
 %description
