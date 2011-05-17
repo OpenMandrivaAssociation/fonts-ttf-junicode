@@ -1,6 +1,6 @@
 %define version 0.6.11
 %define fversion 0-6-11
-%define release %mkrel 7
+%define release %mkrel 8
 
 Summary:	Peter Baker's Junicode Fonts for medievalists
 Name:		fonts-ttf-junicode
