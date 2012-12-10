@@ -1,0 +1,54 @@
+2006-04-10  Peter Baker  <peter@localhost.localdomain>
+
+	* Junicode-Italic.sfd: Cleaned up glyphs a-q.
+
+	* Junicode-BoldItalic.sfd: Fixed faulty FullName field in name
+	table. "PFM Family" was "Decorative," is now "Serif."
+
+2006-04-07  Peter Baker  <psb6m@virginia.edu>
+
+	* Junicode*.sfd: added fj ligature (E18A) and longs ligatures
+	(E1A6-E1AD). Cleanups in various glyphs.
+
+	* Junicode-Regular.sfd: corrected bad points in slash.
+
+	* Junicode-Regular.xgf: corrected point-number mismatch in program
+	for slash.
+
+2006-04-03  Peter Baker  <psb6m@virginia.edu>
+
+	* Junicode*.sfd: added Nordic shapes of thorn, Thorn and eth, and
+	OpenType features to access them in OpenType-aware
+	applications. Added OpenType feature "Stylistic Set 1" to access
+	Nordic shapes; added "Stylistic Set 2" to access old-style Old
+	English letter shapes. Cleanups continue in all four faces.
+
+	* Junicode-Regular.sfd: added many OpenType features, especially
+	Stylistic Alternatives for standard alphabetic characters. Added
+	various ligatures (fj at E18A and various longs ligatures at
+	E1A6-E1AD) and also OpenType features for these. Added small caps
+	with diacritics at F7E0-F7FF. Note that the locations of all these
+	added characters match those used by Adobe.
+
+	* *.*: Note that SourceForge CVS has been down and logging of
+	changes has not been regular. This ChangeLog may omit some added
+	features, especially OpenType features.
+
+2006-03-28  Peter Baker  <psb6m@virginia.edu>
+
+	* Junicode-Regular.sfd: completed MUFI PUA subranges 8, 9, 10, 16,
+	17, 18, 30, 31. Performed various cleanups of messy
+	glyphs. Current character count is 1887.
+
+	* Junicode-Bold.sfd: various cleanups.
+	
+2006-03-17  Peter Baker  <psb6m@virginia.edu>
+
+	* Junicode-Regular.sfd: Added MUFI characters at F023-F02C.
+
+	* Junicode-Bold.sfd: fixed bug: disappearing ff.
+
+	* Junicode-Regular.xgf, Junicode-Bold.xgf: changed <font-file> to
+	<infile> <outfile> in accordance with Xgridfit 0.3 usage.
+
+	* Junicode-Regular.sfd: miscellaneous glyph cleanups.
