@@ -8,7 +8,7 @@ Version:	%{version}
 Release:	%{release}
 License:	GPL
 Group:		System/Fonts/True type
-URL:		http://junicode.sourceforge.net/
+URL:		https://junicode.sourceforge.net/
 # (Abel) I'm lazy; zip file at http://www.engl.virginia.edu/OE/junicode/
 Source0:	junicode-%fversion.zip
 # from http://heanet.dl.sourceforge.net/sourceforge/junicode/junicode-source-0.6.11.tar.gz:
